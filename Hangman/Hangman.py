@@ -48,8 +48,6 @@ def play(word):
     checked = []
     tries = 0
 
-    print(word)
-
     while True:
         display_hangman(tries)
         print(word_map[4], 'букв')
