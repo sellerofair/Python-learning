@@ -22,4 +22,4 @@ for x in range(1, n ** 2 + 1):
     j = j + (direction == 'right') - (direction == 'left')
     i = i + (direction == 'down') - (direction == 'up')
 for row in matrix:
-    print(*row, sep=' ')
+    print(*row, sep='\t')
