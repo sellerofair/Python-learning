@@ -15,18 +15,11 @@
 Для каждого запроса выведите в отдельной строке слово "Yes", если класс 1 является предком класса 2, и "No", если не является.
 '''
 
-from is_parent import is_parent
+from funcs import read_tree, is_parent
 
 classes = {}
 
-for _ in range(int(input())):
-    req = input()
-    pos = req.find(':')
-    if pos == -1:
-        classes[req] = {}
-    else:
-        new_cl = req[:pos - 1]
-        classes[new_cl] = set(req[pos + 2:].split())
+read_tree(classes)
 
 for _ in range(int(input())):
     class1, class2 = input().split()

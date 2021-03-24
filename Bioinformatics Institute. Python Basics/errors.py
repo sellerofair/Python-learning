@@ -17,25 +17,16 @@
 Имена следует выводить в том же порядке, в котором они идут во входных данных.
 '''
 
-from is_parent import is_parent
+from funcs import read_tree, is_parent
 
 classes = {}
 
-for _ in range(int(input())):
-    req = input()
-    pos = req.find(':')
-    if pos == -1:
-        classes[req] = {}
-    else:
-        new_cl = req[:pos - 1]
-        classes[new_cl] = set(req[pos + 2:].split())
+read_tree(classes)
 
 errors = [input() for _ in range(int(input()))]
 
-for i in range(len(errors)):
-    error = errors[i]
-    prev_lines = errors[:i]
-    for prev_line in prev_lines:
+for i, error in enumerate(errors):
+    for prev_line in errors[:i]:
         if is_parent(classes, prev_line, error):
             print(error)
             break
