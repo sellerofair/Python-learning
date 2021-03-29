@@ -11,8 +11,9 @@
 Не все ссылки внутри HTML документа могут вести на существующие HTML документы.
 '''
 
-import requests
 import re
+
+import requests
 
 a, b = input(), input()
 
