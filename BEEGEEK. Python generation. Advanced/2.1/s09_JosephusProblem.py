@@ -16,5 +16,8 @@ k = int(input())
 
 i = 0
 while len(ls) > 1:
-    i += (k + 1) % len(ls)
+    i += k - 1
+    i %= len(ls)
     del ls[i]
+
+print(ls[0])
